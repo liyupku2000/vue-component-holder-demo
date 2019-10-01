@@ -1,37 +1,42 @@
 <template>
 <div  class="container">
-  <h4>{{ changeCounter }}: {{ message }}</h4>
-  <button @click="add2">Add2</button>
-  <button @click="delFirst2">DeleteFirst2</button>
-  <button @click="update1">Update$1</button>
-  <button @click="update2">Update$2</button>
-  <button @click="resetAll1">ResetAll$1</button>
-  <button @click="resetAll2">ResetAll$2</button>
-  <div class="row">
-    <div class="col-lg-3" v-for="(city, cityName) in cities" :key="cityName">
+  <div class="hint">
+    Type "ctl+alt+l" on Windows or "ctl+meta+l" on Mac to show Log Panel
+  </div>
+  <div class="content">
+    <h4>Event No. {{ changeCounter }}: {{ message }}°</h4>
+    <button @click="add2">Add2</button>
+    <button @click="delFirst2">DeleteFirst2</button>
+    <button @click="update1">Update$1</button>
+    <button @click="update2">Update$2</button>
+    <button @click="resetAll1">ResetAll$1</button>
+    <button @click="resetAll2">ResetAll$2</button>
+    <div class="row">
+      <div class="col-lg-3" v-for="(city, cityName) in cities" :key="cityName">
 
-      <!-- before holdify -->
-      <vue-holder name="City">
-        <CityCard :ref="`City-${cityName}`" :name="cityName" :city="city" @delete="onDelete">
-          <p>GDP (slot): <span v-text="city.GDP" /> billion</p>
-          <template #scopedSlot="{ area }">
-            <p>Area (scoped slot): <span v-text="area" /> mi<sup>2</sup></p>
-          </template>
-        </CityCard>
-      </vue-holder>
+        <!-- before holdify -->
+        <vue-holder name="City">
+          <CityCard :ref="`City-${cityName}`" :name="cityName" :city="city" @delete="onDelete">
+            <p>GDP (slot): <span v-text="city.GDP" /> billion</p>
+            <template #scopedSlot="{ area }">
+              <p>Area (scoped slot): <span v-text="area" /> mi<sup>2</sup></p>
+            </template>
+          </CityCard>
+        </vue-holder>
 
 
-      <!-- after holdify -->
-      <!-- <vue-holder name="City" :uid="{ cityName }"
-        :vars="{ '*city': 'cities[cityName]' }"
-        template='<CityCard :ref="`City-${cityName}`" :name="cityName" :city="city" @delete="onDelete">
-                    <p>GDP (slot): <span v-text="city.GDP" /> billion</p>
-                    <template #scopedSlot="{ area }">
-                      <p>Area (scoped slot): <span v-text="area" /> mi<sup>2</sup></p>
-                    </template>
-                  </CityCard>'
-      /> -->
+        <!-- after holdify -->
+        <!-- <vue-holder name="City" :uid="{ cityName }"
+          :vars="{ '*city': 'cities[cityName]' }"
+          template='<CityCard :ref="`City-${cityName}`" :name="cityName" :city="city" @delete="onDelete">
+                      <p>GDP (slot): <span v-text="city.GDP" /> billion</p>
+                      <template #scopedSlot="{ area }">
+                        <p>Area (scoped slot): <span v-text="area" /> mi<sup>2</sup></p>
+                      </template>
+                    </CityCard>'
+        /> -->
 
+      </div>
     </div>
   </div>
 </div>
@@ -132,7 +137,13 @@ export default class CityDashboard extends Vue {
         // return ref ? ref.getHigh() : 0;
       })
     );
-    this.message = `highest = ${highest}`;
+    this.message = `the Highest Temprature is ${highest}`;
   }
 }
 </script>
+<style lang="sass" scoped>
+.hint
+  margin-top: 10px
+.content
+  margin-top: 40px
+</style>

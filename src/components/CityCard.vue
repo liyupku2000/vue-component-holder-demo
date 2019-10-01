@@ -5,7 +5,7 @@
   <p>Population: {{ city.population }} million</p>
   <slot />
   <slot name="scopedSlot" :area="city.area" />
-  <p>Today's Temprature: {{high}}&#176; {{low}}&#176;</p>
+  <p>Today's Temprature: {{high}}° {{low}}°</p>
   <p>Location: {{latitude}} {{longitude}}</p>
 </div>
 </template>
@@ -26,7 +26,7 @@ export default class CityCard extends Vue {
   high = 0
 
   async asyncData(parent) {
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     // if (Math.random() < .5) {
     //   await axios.get('/api/asyncData');
     // }
@@ -37,7 +37,7 @@ export default class CityCard extends Vue {
   }
 
   async init() {
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     // await axios.get('/api/init');
     this.high = parseInt(70 + Math.random() * 10);
     this.low = parseInt(60 + Math.random() * 10);
