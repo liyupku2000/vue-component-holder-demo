@@ -4,7 +4,7 @@
     Type "ctl+alt+l" on Windows or "ctl+meta+l" on Mac to show Log Panel
   </div>
   <div class="content">
-    <h4>Event No. {{ changeCounter }}: {{ message }}°</h4>
+    <h4>mvmsUpdated event No. {{ changeCounter }} ==> {{ message }}</h4>
     <button @click="add2">Add2</button>
     <button @click="delFirst2">DeleteFirst2</button>
     <button @click="update1">Update$1</button>
@@ -137,7 +137,7 @@ export default class CityDashboard extends Vue {
         // return ref ? ref.getHigh() : 0;
       })
     );
-    this.message = `the Highest Temprature is ${highest}`;
+    this.message = `the Highest Temprature is ${highest}°`;
   }
 }
 </script>
