@@ -30,6 +30,7 @@ export default class CityCard extends Vue {
     // if (Math.random() < .5) {
     //   await axios.get('/api/asyncData');
     // }
+
     return {
       latitude: `${Math.round(Math.random()*30)+20}° N`,
       longitude: `${Math.round(Math.random()*180)}° W`
@@ -39,6 +40,7 @@ export default class CityCard extends Vue {
   async init() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     // await axios.get('/api/init');
+
     this.high = parseInt(70 + Math.random() * 10);
     this.low = parseInt(60 + Math.random() * 10);
   }
