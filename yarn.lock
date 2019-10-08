@@ -7820,10 +7820,10 @@ vue-class-component@^7.0.1, vue-class-component@^7.0.2:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
   integrity sha512-G9152NzUkz0i0xTfhk0Afc8vzdXxDR1pfN4dTwE72cskkgJtdXfrKBkMfGvDuxUh35U500g5Ve4xL8PEGdWeHg==
 
-vue-component-holder@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/vue-component-holder/-/vue-component-holder-0.0.8.tgz#7f4dcd8a224c719cc4c5372e09a4208725354001"
-  integrity sha512-w5KrLhWXvtFydaO3BBxd62wHm7Uc029kcqUoDA7UcOlI/6yRC+I5I+ZLI92mF/DY70usGeUcAr+tUGJ0dchVXw==
+vue-component-holder@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/vue-component-holder/-/vue-component-holder-0.0.9.tgz#9986277a911a84aa33d8065cc9ff5493b6a73b6b"
+  integrity sha512-IIqG7auXTHtwALCLsC7SkEtyh9vN4R+v0OR6jaeRoabNknAm0avAGkqaMxY5kCRny6mwp+gFlS/Xa0AavaICNQ==
   dependencies:
     change-case "^3.1.0"
     vue "^2.6.10"
