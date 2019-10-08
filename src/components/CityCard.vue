@@ -1,7 +1,7 @@
 <template>
 <div class="wrap">
   <button class="btn-delete" @click="$emit('delete', name)"><i class="fa fa-remove"></i></button>
-  <h4>{{ name }}</h4>
+  <h5>{{ name }}</h5>
   <p>Population: {{ city.population }} million</p>
   <slot />
   <slot name="scopedSlot" :area="city.area" />
