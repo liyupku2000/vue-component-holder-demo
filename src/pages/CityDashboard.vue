@@ -11,7 +11,7 @@
     <button @click="update2">Update$2</button>
     <button @click="resetAll1">ResetAll$1</button>
     <button @click="resetAll2">ResetAll$2</button>
-    <div class="row">
+    <div class="row cards">
       <div class="col-lg-3" v-for="(city, cityName) in cities" :key="cityName">
 
         <!-- before holdify -->
@@ -146,4 +146,6 @@ export default class CityDashboard extends Vue {
   margin-top: 10px
 .content
   margin-top: 40px
+  .cards
+    margin-top: 20px
 </style>

@@ -1,6 +1,8 @@
 <template>
 <div class="wrap">
-  <button class="btn-delete" @click="$emit('delete', name)"><i class="fa fa-remove"></i></button>
+  <button class="btn-delete" @click="$emit('delete', name)">
+    <font-awesome-icon :icon="['far', 'window-close']" />
+  </button>
   <h5>{{ name }}</h5>
   <p>Population: {{ city.population }} million</p>
   <slot />
