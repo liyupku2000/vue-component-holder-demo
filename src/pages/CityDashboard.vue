@@ -26,7 +26,8 @@
 
 
         <!-- after holdify -->
-        <!-- <vue-holder name="City" :uid="{ cityName }"
+        <!-- <vue-holder name="City"
+          :uid="{ cityName }"
           :vars="{ '*city': 'cities[cityName]' }"
           template='<CityCard :ref="`City-${cityName}`" :name="cityName" :city="city" @delete="onDelete">
                       <p>GDP (slot): <span v-text="city.GDP" /> billion</p>
@@ -60,7 +61,7 @@ let CITIES = { // mock data
 @Component({
   components: {
     CityCard,
-    //CityCard : () => import('../components/CityCard.vue' /* webpackChunkName: 'components.CityCard' */)
+    //CityCard : () => import('../components/CityCard' /* webpackChunkName: 'components.CityCard' */)
   }
 })
 export default class CityDashboard extends Vue {
