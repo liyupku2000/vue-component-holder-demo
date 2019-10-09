@@ -1,7 +1,7 @@
 <template>
 <div  class="container">
   <div class="hint">
-    Type "ctl+alt+l" on Windows or "ctl+meta+l" on Mac to show Log Panel
+    Type "ctl+alt+l" on Windows or "ctl+meta+l" on Mac to select Log Categories
   </div>
   <div class="content">
     <h4>mvmsUpdated event No. {{ changeCounter }} ==> {{ message }}</h4>
@@ -55,7 +55,7 @@ let CITIES = { // mock data
   'London': { area: 607, population: 8.136, GDP: 765 },
   'Los Angeles': { area: 503, population: 4, GDP: 645.36 },
   'Beijing': { area: 6490, population: 21.54, GDP: 446.6 },
-  'Hong Kong': { area: 427, population: 7.392, GDP: 341.4 }
+  'Shanghai': { area: 2448, population: 24.24, GDP: 494 }
 };
 
 @Component({
