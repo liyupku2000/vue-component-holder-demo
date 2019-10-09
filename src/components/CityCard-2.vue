@@ -13,43 +13,43 @@
 </template>
 
 <script>
-import { Public } from 'vue-component-holder/decorators'
-import { Component } from 'vue-property-decorator'
-import Vue from 'vue'
+export default {
+  name: 'CityCard',
 
-@Component({
   props: {
     name: String,
     city: Object
-  }
-})
-export default class CityCard extends Vue {
-  low = 0
-  high = 0
+  },
+
+  data() {
+    return {
+      low: 0,
+      high: 0
+    }
+  },
+
+  created() {
+    this.$publish('getHigh');
+  },
 
   async asyncData(parent) {
     await new Promise((resolve) => setTimeout(resolve, 50));
-    // if (Math.random() < .5) {
-    //   await axios.get('/api/asyncData');
-    // }
-
     return {
       latitude: `${Math.round(Math.random()*30)+20}° N`,
       longitude: `${Math.round(Math.random()*180)}° W`
     };
-  }
+  },
 
   async init() {
     await new Promise((resolve) => setTimeout(resolve, 50));
-    // await axios.get('/api/init');
-
     this.high = parseInt(70 + Math.random() * 10);
     this.low = parseInt(60 + Math.random() * 10);
-  }
+  },
 
-  @Public
-  getHigh() {
-    return this.high;
+  methods: {
+    getHigh() {
+      return this.high;
+    }
   }
 }
 </script>
