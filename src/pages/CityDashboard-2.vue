@@ -1,7 +1,5 @@
 <script>
-import CityCard from '../components/CityCard-2'
-
-let CITY_INDEX = 0;
+let UNIQUE_INDEX = 0;
 
 let CITIES = { // mock data
   'New York': { area: 302.6, population: 8.623, GDP: 807 },
@@ -14,10 +12,17 @@ let CITIES = { // mock data
 export default {
   name: 'CityDashboard',
 
-  components: { CityCard },
+  components: {
+    CityCard : () => import('../components/CityCard' /* webpackChunkName: 'components.CityCard' */)
+  },
 
-  created() {
-    this.cities = {...CITIES};
+  registerHolders() {
+    return { name: 'City' };
+  },
+
+  async prefetch() {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    this.cities = { ...CITIES };
   },
 
   mvmsUpdated() {
@@ -28,7 +33,7 @@ export default {
     return {
       cities: {},
       message: '',
-      changeCounter: 0
+      eventCounter: 0
     }
   },
 
@@ -38,8 +43,8 @@ export default {
     },
 
     add2() {
-      this.$set(this.cities, `New City ${CITY_INDEX++}`, { area: 0, population: 0, GDP: 0 });
-      this.$set(this.cities, `New City ${CITY_INDEX++}`, { area: 0, population: 0, GDP: 0 });
+      this.$set(this.cities, `New City ${UNIQUE_INDEX++}`, { area: 0, population: 0, GDP: 0 });
+      this.$set(this.cities, `New City ${UNIQUE_INDEX++}`, { area: 0, population: 0, GDP: 0 });
     },
 
     delFirst2() {
@@ -83,7 +88,7 @@ export default {
     },
 
     makeMessage() {
-      this.changeCounter++;
+      this.eventCounter++;
       const cityNames = Object.keys(this.cities);
       const highest = Math.max(
         ...cityNames.map(cityName => {
@@ -110,7 +115,7 @@ export default {
           Type "ctl+alt+l" on Windows or "ctl+meta+l" on Mac to select Log Categories
         </div>
         <div class="content">
-          <h4>mvmsUpdated event No. { this.changeCounter } ==> { this.message }</h4>
+          <h4>mvmsUpdated event No. { this.eventCounter } ==> { this.message }</h4>
           <button on-click={ this.add2 }>Add2</button>
           <button on-click={ this.delFirst2 }>DeleteFirst2</button>
           <button on-click={ this.update1 }>Update$1</button>

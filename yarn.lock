@@ -7889,10 +7889,10 @@ vue-class-component@^7.0.1, vue-class-component@^7.0.2:
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
   integrity sha512-G9152NzUkz0i0xTfhk0Afc8vzdXxDR1pfN4dTwE72cskkgJtdXfrKBkMfGvDuxUh35U500g5Ve4xL8PEGdWeHg==
 
-vue-component-holder@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/vue-component-holder/-/vue-component-holder-0.0.10.tgz#424001e381ff0a32d1f8956adf80447db095822c"
-  integrity sha512-uzhKqU/kiv7SJ4LuIF83GEWzfMM55xA2/EVe40ocMZ1V+T5sS0x2W4CHoFl1cJGHMNFf4IVvLucajLkCeoF3Gw==
+vue-component-holder@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/vue-component-holder/-/vue-component-holder-0.0.14.tgz#9c7675705302c1de804121dfbfbe3d89960baa07"
+  integrity sha512-HcicyDzOYElCsKruI7D27aC/AcSNM4X12HWoDVQ4m1gHNoHfDLke7NwNQNCCTbkGGX1+LiY2t8jTe/7/Zwk8/g==
   dependencies:
     change-case "^3.1.0"
     vue "^2.6.10"
