@@ -1,6 +1,6 @@
 module.exports = {
   customHooks: {
-    preInitMvms: [ 'prefetch', 'beforeInit' ],
-    postInitMvms: [ 'init', 'inited' ]
+    preInitMvms: [ 'beforeInit' ],
+    postInitMvms: [ 'inited' ]
   }
 }

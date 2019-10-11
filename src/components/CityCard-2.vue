@@ -40,7 +40,7 @@ export default {
     };
   },
 
-  async init() {
+  async inited() {
     await new Promise((resolve) => setTimeout(resolve, 50));
     this.high = parseInt(70 + Math.random() * 10);
     this.low = parseInt(60 + Math.random() * 10);

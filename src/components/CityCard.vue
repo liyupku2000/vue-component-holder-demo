@@ -39,7 +39,7 @@ export default class CityCard extends Vue {
     };
   }
 
-  async init() {
+  async inited() {
     await new Promise((resolve) => setTimeout(resolve, 50));
     // await axios.get('/api/init');
 

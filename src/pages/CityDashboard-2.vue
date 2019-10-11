@@ -16,17 +16,15 @@ export default {
     CityCard : () => import('../components/CityCard' /* webpackChunkName: 'components.CityCard' */)
   },
 
+  // we need to manually register the 'City' holder here because the initial value of this.cities is empty
   registerHolders() {
     return { name: 'City' };
   },
 
-  async prefetch() {
+  // this is a preInitMvms hook we injected in holder.config.js
+  async beforeInit() {
     await new Promise((resolve) => setTimeout(resolve, 100));
     this.cities = { ...CITIES };
-  },
-
-  mvmsUpdated() {
-    this.makeMessage();
   },
 
   data() {
@@ -35,6 +33,10 @@ export default {
       message: '',
       eventCounter: 0
     }
+  },
+
+  mvmsUpdated() {
+    this.makeMessage();
   },
 
   methods: {

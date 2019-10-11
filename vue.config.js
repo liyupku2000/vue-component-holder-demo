@@ -12,7 +12,7 @@ module.exports = {
           return options;
         });
 
-    // Cache could skip the injected 'holdify' option
+    // Cache may cause the injected 'holdify' option skipped
     config.module
       .rule('vue')
       .uses.delete('cache-loader');
